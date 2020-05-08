@@ -1,0 +1,180 @@
+S3 : Simple Storage Service : 
+
+--> Object based storage : Designed to store flat files.. We cann't install OS.. : s3
+--> Block based storage : Designed to run OS.. : EBS, Instance Store volumes (ec2)
+--> Network attached storage : Storage over the network, we can attach to servers..: EFS 										(ec2)
+
+--> S3 is a Object based storage.
+--> We store all data in Buckets. 
+--> S3 is global platform.  (While creating We need to choose the region)
+--> Softlimit : Bucket count : 100
+--> Bucket Naming standards: (should comply with DNS standards)
+	--> Bucketn name : Min 3 Char.. Max 63 char..
+	--> bucket name should be unique across the golbe. 
+	--> should not contains Capital letters.. 
+	--> Name should start with .  , should not end with . , no adjesent ..
+	--> Should not resemble IP address format (x 192.168.0.0)
+--> No Pre-Provisioning required.
+--> We have Unlimited storage in s3 patform.
+
+--> S3 supports Max Object size : 5 TB
+--> Min object size depends on Storage class.
+
+
+If we want to share any data from S3 bucket, We need to modify "Block public access" settings on s3 bucket.
+
+Object Path:
+Standard Path syntax:   https://s3.region.amazonaws.com/bucketname/objectname
+
+Virtual Paths: (if you want use this format, bucket name should not contain ".")
+https://bucketname.s3.amazonaws.com/objectname
+https://bucketname.s3.region.amazonaws.com/objectname
+
+
+Storage Class: 
+
+Aceess pattern : How frequently you are accessing data.. 
+
+Frequently accesing data 	: S3-Standard
+Infrequently accessing data 	: Standard-IA, OneZone-IA
+Archieve 			: Glacier , Glacier Deep Archieve (restore to view)
+Easily reprodusable data 
+/ NonMission critical 		: RRS (Reduced Redundancy Storage)
+unknown access patterns 	: Intelligent tier
+
+SC		Availability		Durability		AZs	Min obj size
+
+Standard : 	99.99%			99.999999999 %		3	0 bytes
+Stanadrd IA	99.9%			""			3	128KB
+Onezone-IA	99.9%			""			1	128KB
+Glacier		99.99%			""			3	40KB
+Glacie DA	99.99%			""			3	40KB
+Intelligent 	99.9%			""			3	0 bytes
+RRS		99.99%			99.99% (less dura)	
+
+
+_______________________________________________________________________________________
+
+D: 07/05/2020
+
+Freetier : 5GB "Standard" storage class. 
+2000 PUT Operations (Upload)
+20,000 GET operation (Download)			--> Reset every month 
+
+s3://avinash1/VPC.txt
+s3://avinash1/test/s3.txt
+
+Metadata : Data about the data.. AWS Gives metadata automatically. 
+Combination of Key and Value pairs.. 
+
+
+Versioning : 
+
+--> Track all changes happening on our data.
+--> It works as a backup option also.
+--> Version ID generates automatically.
+--> Uploaded time plays key role.
+
+When Versioning : HIDE
+--> If you delete an object, we will get a delete Marker.
+--> Delete the Delete market to get the file back to s3 platform.
+
+When Versioning : SHOW
+--> If you delete an object, object delete perminently.
+
+
+SRR : Same Region Replication : Source bucket and destination bucket resides in same region
+CRR : Cross Region Replication : Source bucket in 1 region, Destination bucket in another region..
+
+--> Versioning must be enabled on source & Destination bucket.
+--> We can change the storage class for treplicated objects.
+
+
+Task : COnfigure the Life cycle Rule to transit data from S3 Standard to Delete automatically after 7 days.
+
+Task 2 : Configure the SRR between 2 buckets and replicate the data with s3standard only.
+
+Task 3 : While configuring SRR, What is Priority.???
+
+Task 4 : Can we configure replication from "One source bucket to multiple destination buckets..??
+
+
+______________________________________________________________________________________
+
+D: 08/05/2020
+
+Server access logging: Log option on one individual bucket. We can store logs on same bucket or another bucket.
+
+Static Website Hosting: 
+Domain Name should be same as Bucket Name
+Upload all data, We need to provide minimum of Read access on our data. 
+--> You no need to worry abaout the server configuration / applciation configuration.
+--> Website availability : 99.99% , Durability : 99.999999999 %
+
+http://avinash.website.s3-website.ap-south-1.amazonaws.com
+
+http://bucketname.s3-website.region.amazonaws.com	--> Map your domain (Route53)
+
+Http status codes:
+2XX --> OK/Success
+3XX --> Redirection error
+4XX --> Client Side error
+5XX --> Server Side error
+
+Object Lock : Designed to protect our data. Once enabled, noone can delete the data.
+--> Must be enabled while creating bucket only. 
+--> Versioning must be enabled.
+
+Governance mode can be disabled by AWS accounts that have specific IAM permissions.
+Compliance mode cannot be disabled by any user, including the root account.
+
+
+Transfer acceleration : It allow us to use aws CDN service called Cloudfront. Edge locations used for upload / download.
+
+
+S3 Events : 
+--> SQS
+--> Lambda
+--> SNS : Simple Notification Service.. 
+
+Requester pays : Instead of bucket owner, Who is requesting data, he will get charged.
+
+Analysis : Storage class analysis :  Amazon S3 analyzes your access patterns and suggests a candidate age to transition objects to Standard - IA for a lifecycle rule.
+
+inventory Report : You can receive a file of your object inventory on a daily or weekly basis for the entire bucket or a shared prefix.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

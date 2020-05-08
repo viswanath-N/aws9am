@@ -1,0 +1,293 @@
+On-Demand Self Service : 
+
+100 Customers : small config.. : 10M Customers --> High Conf : 1000 cus : Medium
+
+Small					High			Medium
+
+
+pay-as-you-go : 15 Min.. 
+
+
+No Capital Expendeture : Cloud
+Less Operational Expendature : 
+
+MOney from bank account : Traditional :
+ATM : Automated : 
+
+Do we need Programing Experience .?
+Ans : No Required.. 
+
+Do We need to have Linux Knowledge.?
+Ans : YES.. 
+
+Do we need DevOps.?
+Ans: Automate the priocess using AWS tools.. Free course on DevOPs.
+CodePipeline (CICD), GIT, Maven, jenkins, AWS tools
+
+Do we cover Linux here..? 
+Yes, and 2 sessions on Linux.. Share a Complete Linux course.. 
+
+What certifications we can clear with this course.?
+
+Available Cert : Foundation (75$), Associate level (150$), professional, Specialist (300$).. 
+500 Ceretification Questions.. 
+
+Do we have any live Projects.?
+Real Usecases, multiple Projects... 
+
+Do we have hands-on.?
+Ans : 95% course is Hands-on.. 
+Tasks simulated to realtime activities.. 
+
+AWS Sys Engineer / SysOps
+AWS SA
+AWS Developer
+
+AWS ML/DS
+AWS BigData
+AWS DBA
+AWS Security Specialist
+AWS Alexa
+AWS Network Specialist
+
+Will cert gives me a job.?
+Ans : NO.. Weightage to your profile..!!
+
+
+AWS Developer : Pythons (boto3).. JSON.. YAML (Cloudformation & Lambda).. --> Learn AWS
+Lambda: Node.js
+
+
+Will this course cover Migration/ Hybrid services.?
+Ans : Yes.. 
+
+SMS : VMWARE VCentre:  Videos.. 
+
+
+
+Public Cloud : Open for all.. Anyone can create an account and they can start using the resources.. Maintenance: Service Provider..  Ex: AWS. Azure, GCP, Oracle cloud, alibaba..
+
+Private Cloud : available for one organization.. Corporate credentials.. Main: Organization / 3rd party org.. Ex: HP, Dell.. 
+
+Hybrid Cloud : Public + public / Public + private.. 
+On-Premise DC (Database) + AWS (Web Servers).. VPN / AWS Direct Connect.. 
+MSSQL (AZURE) + (Web) AWS ... Main: Both
+
+Community Cloud : Group of organizations Build the Infra and They use they Infra.. 
+Main: One of the org from COmmunity / 3rd party.. 
+
+
+Service Models of Cloud Computing: 
+__________________________________
+
+On-premise / traditional : 
+
+SaaS : Lightsail
+PaaS : Benastalk
+IaaS : ec2
+
+
+Website : 
+On-Premise : Servers, Network, database, storage, middleware, runtime, data, application
+SaaS : pick the required service.. start using it.. 
+PaaS : Data, application.. 
+IaaS : middleware, runtime, data, application
+
+__________________________________
+D: 30/04/2020
+
+Browser: 
+
+Putty /command prompt / terminal
+Remote desktop connection / RDP package for mac
+
+
+2003: ChrisPinkman and Bejamin Black: Whitepapers.. SQS 
+2006 : officially launched.. :  
+
+Amazon : Jeff Bejos
+AWS.com : Andy Jessy
+
+AWS Conducts annual conference : AWS Re:Invent : 
+
+AWS Global Infrastructure : 
+
+Regions : No technical defination available : Physical location / Geographical location..
+Every region contains min of 2 AZs..  
+
+24 Regions... 20 for everyone.. 
+
+2 regions China : sign-up
+2 region us-gov-cloud : sign-up : PCI/DSS 
+
+Availability Zone / AZs : Data centre or combination of multiple DC, which is designed to isolate the individual reosurce failures.. 
+76 Availability Zones.. 
+
+PoP :EDGE :  POint of Presence : It is a CDN endpoint.. COntent Delivery network.. Cache the data.. 205 Edge locations...  216 Points of Presence.. : CloudFront
+
+_______________________________________________________________________________________
+D: 01/05/2020
+
+How to create an AWS Account.. 
+
+Step 1:
+Valid Email ID to create an AWS account.. : ROOT User
+Password and Confirm Password
+Enter Account Name
+
+Step 2 : 
+Contact Information :					
+Personal account / professional account
+--> Name, Address					
+
+Step 3 : Payment Information
+Provide CC/DC information (Visa / Master Card / AMEX) 
+2 INR dedicts / refund.. 
+
+Step 4 : Verify the identity
+Phone verification / email verification
+Capacha, Give your Phone NUmber : 00000000000 --> On Screen XXXX --> answer the call and enter the XXXX digit pin.. 
+
+Capcha--> Enter email --> Get the XXXX code, and enter 
+
+Step 5 : Choose the Support plan.. 
+
+1 : Account and Billing related.. 24x7, 365 days free for all SP
+2 : Service limit increase.. 24x7, 365 days free for all SP
+3 : Technical Support.. : Depends on SUpport plan
+
+S3 : Simple Storage Service :  100 buckets.. 
+ec2 : Compute : Server : 20 running servers.. 
+
+local busines hours : 8AM - 6PM
+
+Basic SP : Free, 3: No technical support.. primary contact can raise ticket.. Technical assistance : AWS Forums/ AWS documentations/ KnowledgeBase Article.. 
+
+Developer SP : 29$/Month.. 3 : 12-24 local business hours (general guidenlines / System impaired).. Cloud support associates.. primary contact can raise ticket.. 
+
+Business SP : 100$/Month.. 3 : 1 Hour (Production Down), Production impaird (4 hrs),  any user can raise a ticket.. 24x7 phone, email and chat.. Cloud support engineer..
+
+Enterprise SP : 15,000$/Month.. 3 : 15 Min (Business critical), Prod Down : 1 hr, Production impaird (4 hrs),  any user can raise a ticket.. 24x7 phone, email and chat..TAM : Technical account manager will be allocated.. Conceirge Support team.. Cloud support engineer..
+
+choose Basic SP.. 
+
+Create and login to aws account.. 
+
+aws.amazon.com/free  : 90% services comes under free tier.. 
+
+s3: storage : 5 gb.. 
+ec2 : server : 750 hours/month.. 
+
+http://aws.amazon.com/free
+12 Months Free Tier : 
+
+___________________________________________________________________________________
+
+D: 04/05/2020
+
+Enable "Receive Free Tier Usage Alerts" 
+
+Task : Create a billing alert on your aws account to receive an email if any service is costing us 0.001 USD.
+Task 2 : Activate MFA on root account.
+
+root : Email used to create AWS Account : FUll control on aws.. 
+Enable 2-Factor authentication: 
+
+--> Virtual MFA device : smartphones : Google authenticator. ms auth, authy 2factor.. 
+--> U2F Key : 
+--> Hardware MFA devices : 
+
+2 types of users in AWS
+--> Root User
+--> IAM user
+
+ROOT : 
+
+IT Manager : Full Access : root : 
+TL : Administrator Access : IAM : Administrator : 
+s3user : Storage Service : S3 : S3 Administrator : 
+ec2user : Server service : ec2 : ec2 full access : 
+
+Policy : Contains set of permissions on AWS account.. 
+
+Group : s3Group : S3 Administrator : s3user1, s3user2, s3user3.. 
+
+
+
+IAM User Creation : 
+
+Username : ec2user
+Access Type :
+--> Programmatic access : AccessKeyID & SecretAccessKey:CLI :SDK, API, CLI tools/3rdparty
+--> AWS Management console Access : Username, Pwd & Sign-in link.. GUI : Browser.. 
+
+
+ec2user : ec2 full access (policy) : 
+
+
+Task 1 : Create an IAM user with "Administrator Access" and login and verify his access, Crete an IAM user.
+
+Task 2 : Whatever the user you created in TASK1, test that user access on Account Management and Billig Access...  
+
+Provide Billing Access for IAM users.. 
+
+Task 3 : Create an IAM user with "PowerUser Access" and Login, Try to create an IAM user.
+
+________________________________________________________________________________________
+
+D: 05/05/2020
+
+Policy : JSON (Java Script Object Notation) : Set of permissions on our AWS Account..
+
+AWS Managed : AWS created and managed policies based on Services.. 
+AWS Managed - Job Function : AWS created and managed policies based on Job roles.. 
+Custome Managed : We can create based on our requirement.. 
+
+
+
+AdministratorAccess : Provides full access to AWS services and resources.
+PowerUserAccess : Provides full access to AWS services and resources, but does not allow management of Users and groups.
+ViewOnlyAccess : This policy grants permissions to view resources and basic metadata across all AWS services
+
+
+Requirement : "adminuser" Needs full access on AWS, but not on S3 (Deny Everything).
+
+User : 
+
+
+Implicitly Allow : 
+Explicitly Deny : 
+
+Credential Report : get Credentials reports related to IAM users.
+
+
+Task : Create a policy to deny permission on S3 and ec2.. allocate it to an IAM user who have "AdministratorAccess", and test his access on s3.. 
+
+Task 2 : Create an USER who get access on Everyservice but not on s3. 
+--> Create a Policy to "Deny S3"
+Create an IAM user.. Give "AdministratorAccess" + "Deny S3".. 
+
+Task 3 : Create a User, Add user to multiple Groups, and add policies on directly to user, and Use Policy Simulator to test access on s3 resources.. 
+
+Task 4 : Enable MFA for an IAM User.
+
+Task 5 : One of the IAM user, forgot his password, how can you reset his password as a administrator. 
+
+Task 6 : One of the IAM user left your Organisation, How can you Disable the user (Not Delete).
+
+How to track all IAM user activities..???
+
+We have a service to monitor all IAM user actiivites... --> "CloudTrail"
+CLoudtrail enabled by defaultly. It stores last 90 Days activities.. 
+
+
+Task 7 : Create an IAM user, and ENable billing access and use same user for all our coming sessions.
+
+
+
+https://avinash69.s3.amazonaws.com/aws900.txt
+
+
+
+
+
