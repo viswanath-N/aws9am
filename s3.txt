@@ -144,6 +144,95 @@ Analysis : Storage class analysis :  Amazon S3 analyzes your access patterns and
 inventory Report : You can receive a file of your object inventory on a daily or weekly basis for the entire bucket or a shared prefix.
 
 
+________________________________________________________________________________________
+
+D: 09/05/2020
+
+KMS : Key Management Service : We can encrypt all the data.. 
+
+Symmetric : A single encryption key that is used for both encrypt and decrypt operations.
+Asymmetric : A public and private key pair that can be used for encrypt/decrypt or sign/verify operations.
+
+
+3 Types Encryptions: 
+
+In-Transit :
+	--> SSL /TLS
+
+Server Side Encrytpion / At Rest : 
+	--> SSE - S3 (AES-256) : WHoever have valid permissions he can view data.
+	--> SSE - KMS : Key generates and manages in KMS. While creating key we need to 			provide key usage permissions to IAM users.
+	--> SSE - C (Customer Provided Key) : KMS Manages the key, which is provided by 			customer.
+
+Client Side Encrytion: If you don't want to send encryption keys to AWS / If you don;t want to send unencrypted data to AWS we can use CSE with our own encryption softwares.
+
+Key Usage : Who can use the key.
+Key Administrator : Who can administrate the key including Delete.
+
+Customer managed keys :  "NO FREE TIER ELIGIBILITY." 
+
+_____________
+
+
+ACL
+
+Access for other AWS accounts : We can share this s3 bucket to another aws user.
+--> We need another user's Cananical ID... 
+--> Another user can access data using 3rd party applications / AWS CLI.
+
+Bucket Policy : 
+--> Writtens in JSON format.
+--> 
+
+PolicyGen: 
+
+--> Resource : Bucket 		: arn:aws:s3:::avinash1
+--> Principal : User 		: arn:aws:iam::518084852393:user/s3user
+--> Effect : Allow / Deny	: Deny
+--> Action : 
+
+ARN : Amazon Resource Name : 
+
+
+Bucket Level Operation : arn:aws:s3:::avinash1
+Object level operation : arn:aws:s3:::avinash1/*
+
+
+CORS : Cross Origin Resource Sharing : 
+
+Managing S3 using 3rd party applications :
+--> Cloudberry explorer : Freeware
+--> S3Browser
+--> Cyberduck
+--> Winscp
+
+AWS Import/Export: 
+How to improve s3 performance / naming standards
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
