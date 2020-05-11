@@ -1,0 +1,57 @@
+EC2 : Elastic 		Compute 			Cloud
+	ScaleIN		CPU, Memory, 			AWS
+	Scaleout	Storage, Network, 
+			application
+
+
+
+On-Demand ec2 instances : Unpredictable workloads / usecases.. If you want to test your applciation.. Temporary usage.. 
+Pricing : /sec  or /hr basis we will get charged..  (with min of 60 Sec billing)
+
+Reserved ec2 Instances : Predictable workload/ use cases.. Long time runs with AWS..
+1 Yr / 3Yrs.. 
+	--> Standard RI : We cannot change the instance configuration.. 
+	--> Convertable RI : We can change the config.. 
+	--> Scheduled RI : Repeated / persistant requests.. 
+
+Pricing : Full Upfront : Pay 100% and get your instance.. 
+	  Partial Upfront : Pay 30-50% now.. Remaining Monthly basis with reduced hr 				price
+	  No Upfront : No need to pay anything.. Pay everything monthly basis..
+
+Spot Instances : We can bid against the AWS price. If our quoted price is Equal to aws or greater than aws, we will get the instance.. 
+--> If we have flexible start / stop time for our application.. 
+--> If price increased AWS terminates the instance.
+--> High configuration instances we will get at low cost.
+
+t2.large : 1 $/Hr... You can bit against aws price.. 0.50$/hr fromdate/todate..
+
+--> Spot Fleet
+--> Pricing history
+
+Free Tier : 750 Hrs/ Month On-Demand ec2 instances...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
