@@ -209,6 +209,72 @@ Managing S3 using 3rd party applications :
 AWS Import/Export: 
 How to improve s3 performance / naming standards
 
+_____________________________________________________________________________________
+
+D: 11/05/2020
+
+Default Performance : 
+PUT/COPY/POST/Delete : 3,500 requests /second
+GET/HEAD : 5,500 requests / second
+
+Application : 10,000 GET/Sec
+
+avinash1/2020-05-11-photo1.jpg
+avinash1/2020-05-11-photo2.jpg
+avinash1/2020-05-11-photo3.jpg
+avinash1/2020-05-11-photo4.jpg
+avinash1/2020-05-11-photo5.jpg
+avinash1/2020-05-11-photo6.jpg
+avinash1/2020-05-11-photo7.jpg
+
+avinash1/2020-05-12-photo1.jpg
+avinash1/2020-05-12-photo2.jpg
+avinash1/2020-05-12-photo3.jpg
+avinash1/2020-05-12-photo4.jpg
+
+Increase the randomness in KeyName
+
+avinash1/11-50-0202-photo1.jpg
+avinash1/11-50-0202-photo2.jpg
+avinash1/11-50-0202-photo3.jpg
+
+avinash1/21-50-0202-photo1.jpg
+avinash1/21-50-0202-photo2.jpg
+avinash1/21-50-0202-photo3.jpg
+
+Maintain Unique Prefix for all our data
+
+school : PUT/Delete : 3,500 requests /second..  GET/HEAD : 5,500 requests / second
+
+avinash1/school/11-50-0202-photo1.jpg
+avinash1/school/11-50-0202-photo2.jpg
+avinash1/school/11-50-0202-photo3.jpg
+
+holiday : PUT/Delete : 3,500 requests /second..  GET/HEAD : 5,500 requests / second
+
+avinash1/holiday/21-50-0202-photo1.jpg
+avinash1/holiday/21-50-0202-photo2.jpg
+avinash1/holiday/21-50-0202-photo3.jpg
+
+_______
+
+Import / Export : 
+
+Manifestfile
+Unlockcode
+
+AWS Snowball : 50/80TB Capacity Device : 200$/job
+AWS Snowball-Edge : 100TB Capacity, Compute..: 250$/job 
+AWS Snowmobile : PB scale container.. 
+
+
+AWS Direct Connect : Dedicated pgysical fiber connectivity from AWS network to our corporate network.. 
+
+
+
+
+
+
 
 
 
