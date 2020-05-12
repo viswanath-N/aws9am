@@ -30,7 +30,74 @@ t2.large : 1 $/Hr... You can bit against aws price.. 0.50$/hr fromdate/todate..
 
 Free Tier : 750 Hrs/ Month On-Demand ec2 instances...
 
+_______________________________________________________________________________________
 
+D: 12/05/2020
+
+Windows Instance Launch and connectivity: 
+
+Step 1: Choose an Amazon Machine Image (AMI)	:	Required OS : Windows 2016
+AMI : Template of an OS, Applciation, softwares to run the instance.
+
+Step 2 : Choose an Instance Type : Selecting the configuration (vCPU, Memory, Network Perf)
+
+General Purpose 	: t2, t3, m4, m5	: t2.micro (Free tier)
+Memory Optimised 	: r4, r5, r5ad , x1
+Storage Optimized 	: d2, i2, i3
+Compute Optimized 	: c4, c5, c4n, c5d	: (c5.xlarge 4CPU 8GBRAM) 
+						  (c4.2xlarge 8vCPU 15GB RAM)
+GPU Instances 		: P4, G2
+FPGA (Field programable Gateway Array) : f1
+ML ASIC (Application Specific Integrated Circuit) : inf1
+
+
+Step 3: Configure Instance Details
+
+No of INstance 			: 1
+Shutdown behavior 		: Stop / Terminate
+Enable termination protection 	: Yes (Protect against accidental termination)
+
+Step 4: Add Storage 	: HDD
+
+Step 5: Add Tags 	: Provide your metadata
+
+Step 6: Configure Security Group 
+
+Windows :  RDP : 3389 : MyIP
+Linux : SSH : 22 : 
+
+Source :  	Everywhere/anywhere : 0.0.0.0/0
+		MyIP : Currently connected network IP : 
+		Custom : Custom Network IPs
+
+Step 7: Review and Launch.. 
+
+Username : Administrator
+password : Autogenerates Using Public Key and Private Key  (.pem file)
+
+Public Key : AWS Stores this : Encrypt  
+Private Key : We will get this private key : Decrypt  : .PEM
+
+
+AWS ENvironment : 
+We need to use "PUBLIC IP / DNS", Not "private IP"
+Public IP : Unique across the globe.
+
+
+Connect : 
+1. open "Run" --> mstsc
+2. click on "start" --> "Remote Desktop Connection"
+3. Slect instance --> Action --> Connect --> Download Remote Desktop file.
+
+
+Task : 
+
+Every windows instance comes with 2 RDP Licenses.. 
+
+ALong with Administror... Create another user "yourname" --> Provide "Local Admin Rights"
+and Provide "RDP Permissions".
+
+Login as "Yourname" to ec2 instance.
 
 
 
