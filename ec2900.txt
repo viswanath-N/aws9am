@@ -99,6 +99,86 @@ and Provide "RDP Permissions".
 
 Login as "Yourname" to ec2 instance.
 
+________________________________________________________________________________________
+
+D: 13/05/2020
+
+ec2 instance isolation diagram: 
+--> AWS uses highly customized XEN hypervisor.
+
+
+Shared Hardware Tenancy : Underlying h/w shares with multiple AWS customers.
+Dedicated Tenancy : Dedicated hardware for your AWS account. Underlying h/w will share with any other customers.
+
+--> Dedicated Instance : H/w for one instance.. 
+--> Dedicated Host : H/w for multiple instances.. We can view underlying ports/licensisng parts..  We will get more visualisation on how instances are launched on h/w.
+
+Dedicated cost us very high pricing..
+_________
+
+
+
+2 Root Device types : 
+--> Instance Store Volumes
+--> EBS (Elastic Block Storage) volumes
+
+Instance Store Volumes :
+--> We cannot stop/start the instance. 
+--> If underlying hardware failure happens, we will loss all the data. 
+--> We can reboot, if required.
+
+EBS : 
+--> Dedicated storage service for ec2 instances.
+--> We can perform stop/start no. of times.
+--> If underlying instance h/w failures won't effect our instance.
+
+IOPS : Input and Output Operations per second..
+
+5 Types of EBS VOlumes. Out of 5, to run os, only 3 supports.. "Root Volumes"
+
+root: 
+--> general Purpose SSD : GP2 : Min. 1 Gb, Max 16 TB.. Boot volumes, low latency interactive applications on dev/test env.. 
+IOPS : 16,000 Max.. 1 Gb = 3 IOPS.. with min of 100
+
+--> Provisioned iops SSD : io1 : Min. 4 Gb, Max 16 TB.. Highest performance sSD.. NoSQL, Relational DB, I/O intensive application, If you need more than 10k iops.. 
+Max IOPS : 64,000.. 1 Gb = 50 IOPS.. But we have a choice to specify required iops count.
+
+--> Magnetic : Standard : Min. 1 Gb, Max 1 TB.. Less frequenly accssed data.. Lowest cost storage option.. IOPS : N/A
+
+Additional:
+--> Throughput optimised HDD : st1 : Min 500Gb, Max:16TB, Low cost freq accesed workloads, BigData warehhousing, Log Processing.. 
+
+--> Cold HDD : sc1 : Min 500Gb, Max:16TB, Lowest cost in-freq accesed workloads, COlder data required fewer scans /day.. 
+
+
+"Free Tier : 30GB Standard / Magnetic.. "
+
+
+Task : Launch an ec2 instance in "ap-south-1a" with only root volume.. Create a 1 Gb Volume and associate with ec2 instance and make it available... 
+
+Task 2 : Write some data in 1 gb volume... Increase this 1gb volume size to 2 gb.. 
+
+Task 3 : Launch another ec2 instance in "ap-south-1a", and Detach 2gb volume from task2 instance and attach it to newly launched ec2 instance and make it available, and verify all data is available or not..??
+
+
+Windows FIle Systems : 
+FAT : File allocation table
+FAT32 : 
+NTFS : New technology File system
+ReFS 
+
+
+
+Backup of volumes : sbapshot
+Automate the backup process: DLM
+
+Security groups
+WebServer
+EIP
+ENI
+
+
+
 
 
 
