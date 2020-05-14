@@ -1,0 +1,53 @@
+FINAL
+__________
+
+always work on this path: C:\Users\administrator.DLP\Desktop\snowball
+
+
+upload to Edge:
+_________________
+
+aws s3 cp file s3://bucketname --endpoint http://10.10.0.37:8080
+
+
+Download from Edge:
+___________________
+
+aws s3 cp s3://bucketname/filename D:/copy --endpoint http://10.10.0.37:8080
+
+
+List the files from Edge:
+_________________________
+
+aws s3 ls s3://bucketname --endpoint http://10.10.0.37:8080
+
+
+
+To know Device Status
+_____________
+C:\Users\administrator.DLP\Desktop\snowball>
+
+snowballEdge describe-device --endpoint https://10.10.0.37/ --manifest-file JID339ecc3d-4d26-449b-_manifest.bin --unlock-code 1b7e4-c6a5c-356dd
+
+
+
+
+
+optional:
+--recursive	--> To perform forcefully
+
+
+
+
+
+https://aws.amazon.com/premiumsupport/knowledge-center/snowball-edge-device-transfer-data/
+
+
+
+
+
+
+
+
+
+
