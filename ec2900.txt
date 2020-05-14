@@ -161,26 +161,67 @@ Task 2 : Write some data in 1 gb volume... Increase this 1gb volume size to 2 gb
 Task 3 : Launch another ec2 instance in "ap-south-1a", and Detach 2gb volume from task2 instance and attach it to newly launched ec2 instance and make it available, and verify all data is available or not..??
 
 
-Windows FIle Systems : 
-FAT : File allocation table
-FAT32 : 
-NTFS : New technology File system
-ReFS 
+______________________________________________________________________________________
+
+D: 14/05/2020
+
+Snapshots: Backup copy of our ebs volumes.. 
+
+--> Backup of EBS
+--> If you need multiple copies of your ebs volume.
+--> If you want to create same volume for another AZ instance, we use snapshot.
+--> If you want to create same volume for another Region instance, we use snapshot.
+--> If you want to create share volume to another AWS Account, we use snapshot.
+--> We can make this volume publicly avilable using snapshot.
+
+--> Snapshots are point-in-recovery copies. 
 
 
+DLM : Data LifeCyle Manager : AUtomate the snapshot process: 
 
-Backup of volumes : sbapshot
-Automate the backup process: DLM
+Project : SAP 
 
-Security groups
-WebServer
-EIP
-ENI
+Infinity Days.. 
 
 
+IIS Path for Index.html file:  C:\inetpub\wwwroot
 
 
+Security Group we have associated for our webserver, it must be open with http, then only we can deliver the webpage.. 
 
+Security groups contains Inbound rules and outbound rules.. 
+
+--> Security groups are stateful.. We need to takes care inbound rules only always..
+--> Changes to the SG, takes effect immediately.
+
+Inbound : Data out from ec2 instance.. Data delivering from ec2 instance.. 
+Outbound : Data into ec2 instance.. 
+
+Ec2 instance Outbound security group allows all the traffic.. (Universal accepter)
+
+
+http	: 80
+https 	: 443
+ssh 	: 22
+RDP 	: 3389
+MSSQL 	: 1433
+MYSQL 	: 3306
+
+
+Task : Launch an ec2 instance, make it as a webserver installing IIS and deliver your custom webpage to everyone.
+
+Task 2 : Launch an ec2 instance in ap-south-1a, another instance in ap-south-1b.. Create a volume and attach it to "ap-south-1a" instance and add some data.... Now, the data needs to avilable to "ap-south-1b" instance.. How can you achive it.??
+
+Task 3 : Create a DLM with proper tags, to take snapshots for every 1 hours, at 10:00 AM,
+ Retention should be only 2 copies. 
+
+
+___________________
+
+Images : 
+
+
+ 
 
 
 
