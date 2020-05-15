@@ -216,12 +216,57 @@ Task 3 : Create a DLM with proper tags, to take snapshots for every 1 hours, at 
  Retention should be only 2 copies. 
 
 
-___________________
+________________________________________________________________________________________
 
-Images : 
+D: 15/05/2020
+
+EIP : 
+ENI : 
+
+MyAMI / CustomAMI / GoldenAMI : 
 
 
+Ec2 instance : Web Server installing IIS.. 
+
+
+Windows SG : 3389(RDP), 80, 443 (http & Https)
+Linux SG : 22 (SSH), 80, 443 (http & Https)
+
+bigdata-v1-sg
+bigdata-ws-sg
+sap-prod-sg
+sap-nonprod-sg
+
+
+When we stop/start the ec2 instance, Public IP address changes.
+
+EIP : Elastic IP Address : Dedicated IP address for our AWS Resources.. We can map to ec2 instance NIC cards. (NO FREE TIER ELIGIBLE)
+
+ENI : Elastic Network Interface : (NIC for our ec2 instances) : Multiple NIC cards for our ec2 instance.. 
+
+
+
+Ticket :  We need 10 ec2 instance, Install IIS, Set custom WP, Install Putty, Custom Password, Additional user (RDP)
+
+
+1 instance = configure with all required settings --> Make an "AMI"
+
+Recommeded: Stop the ec2 instance...
+
+
+CustomAMI / Golden AMI : 
+--> If you need instances with specific standards / custom settings, we use goldenAMI.
+--> If you want to copy an instance from one region to another region.
+--> If you want to share your instance with another AWS acocunt user.
+--> If you wasn to make your customized settings for public.. 
  
+--> We cannot share encrypted AMIs/Snapshots.. 
+
+
+
+Task : Ping an ec2 instance.
+
+Task 2 : Create a GoldenAMI with IIS, Custome user and custom application.
 
 
 
