@@ -263,10 +263,78 @@ CustomAMI / Golden AMI :
 --> We cannot share encrypted AMIs/Snapshots.. 
 
 
-
 Task : Ping an ec2 instance.
 
 Task 2 : Create a GoldenAMI with IIS, Custome user and custom application.
+
+________________________________________________________________________________________
+
+D: 16/05/2020
+
+Linux is OpenSource OS.
+
+Amazon : Amazon Linux 2 / Amazon Linux.. 
+
+Fedora: Amazon Linux, CentOS, Redhat..
+
+Linux : SSH : 22 : 
+
+Tools to connect to Linux Instance : 
+--> Putty
+--> Windows Command Prompt (Enable OpenSSH)
+--> Install GIT, Use GIT Bash		(https://git-scm.com/download/win)
+--> MobaXterm
+
+Putty Don't supports .pem format file, We needs to convert .pem to .ppk (Putty Private Key).. We required "PuttyGen" for convertion.
+.pem	--> .ppk
+
+CMD / GIT / Terminal: ssh -i "Key pair.pem" ec2-user@PublicIP
+
+Linux : Terminal : Bad Permissions / Permission too open :  chmod 400 keypair.pem 
+
+
+whoami 		: gives us currently working user information.
+sudo su		: To switch to root user
+yum update -y	: TO update your instance with latest patches.
+
+yum install httpd -y	: COmmand to install Apache webserver.
+
+service httpd status			: To know the apche service status
+service httpd start / stop / restart	: To start the service
+
+chkconfig httpd on			: To make Apache service as Logon automatically
+					  Start the Apache automatically
+
+Content path : /var/www/html/ 
+
+pwd		: Print Working Directory (tells you where exactly you are)
+cd 		: Change directory
+cd /var/www/html/	
+
+Editors : Nano, vi, vim..
+
+VIM EDITOR : 
+
+vim filename	vim index.html
+
+I 	--> To goto Insert Mode
+Esc	--> To comeout from Insert mode
+:wq	--> To Write the Data and Quit the editor
+:q!	--> Quit without writing the data
+
+
+
+https://join.slack.com/t/awswithavinash/shared_invite/zt-ee98fole-ThLu2xoWAVtUhhvoQPl~bA
+
+
+
+
+
+
+
+
+
+
 
 
 
