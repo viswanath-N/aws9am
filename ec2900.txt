@@ -327,17 +327,46 @@ Esc	--> To comeout from Insert mode
 https://join.slack.com/t/awswithavinash/shared_invite/zt-ee98fole-ThLu2xoWAVtUhhvoQPl~bA
 
 
+_________________________________________________________________________________________
+
+D: 18/05/2020
+
+Terminal :  ssh -i keypair.pem ec2-user@publicip
+
+Volumes : 
+
+lsblk 		: List blockbased devices / Attached volumes.
+df -Th		: List the volumes which is in available state.
+
+/dev/xvda1 : 8GB volume
+/dev/xvdf  : 2GB volume
+
+Linux file systems : ext3, ext4, xfs, nfs.. : xfs
+
+Create a File system in 2G volume: 
+
+mkfs -t xfs /dev/xvdf
+mount /dev/xvdf /newvolume
+
+Make it permanenet mount by adding an entry in "/etc/fstab" file.
+
+cat /etc/mtab : get entry related to /dev/xvdf
+
+/dev/xvdf /home/ec2-user/newvolume xfs rw,relatime,attr2,inode64,noquota 0 0
 
 
 
+Task : Launch a Linux ec2 instance, make it as a webserver by installing "Apache".
 
+Task 2 : Launch a linuc ec2 instance, make it as a webserver by installing "nginx".
 
+Task 3 : Launch instance in "1a", Create an Additional volume "1 Gb", and attach it and make it available permanently(add entry in fstab).. Reboot the instance and confirm..
 
+Task 4 : VOlume from Task 3.. Launch an ec2 instance in "1b",  get same volume from "task 3" and make it avilable for "1b" instance.
 
+Task 5 : Launch a Linux ec2 instance.. Make it as a webserver.. And create an Image, and test the output from newly launched ec2 instance.
 
-
-
-
+Task 6 : Can we login to an ec2 instance without a Keypair..?? and How to..?? (R & D)
 
 
 
