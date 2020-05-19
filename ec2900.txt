@@ -368,6 +368,66 @@ Task 5 : Launch a Linux ec2 instance.. Make it as a webserver.. And create an Im
 
 Task 6 : Can we login to an ec2 instance without a Keypair..?? and How to..?? (R & D)
 
+_______________________________________________________________________________________
+
+D: 19/05/2020
+
+Cloudwatch : Monitoring Service on our aws resources.
+
+Basic Monitoring : 5 Min Interval 
+Detailed Monitoring 
+/ Enhanced Monitoring(RDS) : 1 Min Interval 
+
+Using CW, What resources we can monitor : 
+--> CPU (CPU Utilization, CPU credit usage/balance) 
+--> Network  (network in/out . Network pockets in/out)
+--> Disk usage (Disk reads and disk writes, read /write operations)
+--> Status checks (System SC/ Instance SC)
+
+Memory /RAM : We cannot monitor Memory utilisation using CW default metrics.
+Storage : WE cannot monitor storage information also. 
+
+We need to create a Custom Cloudwatch Metrics to monitor MEmory / Storage limit. We need to deploy a cloudwatch agent.. That agent collects all the information and sends to AWS CW Metric.
+
+When CPU utilisation is  >=90% for 5 Min.. Take this action : 
+when cpu usage is <=10% for 5 min.. Take this action : 
+
+To CUstomise the Ec2 instance notifications: 
+___________________________
+INPUT PATH:
+
+{"instance-id":"$.detail.instance-id", "state":"$.detail.state", "time":"$.time", "region":"$.region", "account":"$.account"}
+
+INPUT TEMPLATE: 
+
+"At <time>, Status of your EC2 instance <instance-id> in the AWS Region <region> has changed to <state>."
+
+_____________________________
+
+
+Task : When instance is stopped get a custom notification to your email id.
+
+Task 2 : COnfigure s3 bucket notificaiton, if an object is deleted, get a notification to you email is.
+
+Task 3 : COnfigure alarm on your ec2 instance to terminate the instance, if CU utilisation is <=30 % for 10 Minutes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
