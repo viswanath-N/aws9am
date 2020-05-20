@@ -412,6 +412,63 @@ Task 2 : COnfigure s3 bucket notificaiton, if an object is deleted, get a notifi
 Task 3 : COnfigure alarm on your ec2 instance to terminate the instance, if CU utilisation is <=30 % for 10 Minutes.
 
 
+________________________________________________________________________________________
+
+D: 20/05/2020
+
+ELB : 
+
+Executed only once, when instance is launched for the first time : 
+
+#!/bin/bash
+yum update -y
+yum install httpd -y
+service httpd start
+chkconfig httpd on
+echo "<h1>This is a ap-south-1b webpage</h1>" >> /var/www/html/index.html
+
+3 TYpes of ELBs available :
+
+--> Classic ELB : http, https, tcp..
+--> Application ELB : Http & https
+--> Network ELB : tcp, udp, ssl, tls.. 
+
+Classic ELB : 
+Name : Name of ELB
+Create an internal load balancer: No (As i want to test output from outer networks)
+Enable advanced VPC configuration: Enables
+
+On what port, you w ant to run your instance / elb.
+
+--> For ELB, We don't get any IP address, We'll get DNS name.
+--> using DNS name, we can access the app. 
+
+
+Logs on ELB : AccessLogs : We stores in an S3 bucket.. 
+
+Cross-Zone Load Balancing : 
+
+
+
+Task : Launch multiple ec2 instance in Multiple AZs.. and configure Classic ELB. 
+
+Task 2 : COnfigure the SG settings as we discussed.
+
+Task 3 : Use the Userdata to Make your instance as webserver.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
