@@ -456,13 +456,29 @@ Task 2 : COnfigure the SG settings as we discussed.
 
 Task 3 : Use the Userdata to Make your instance as webserver.
 
+_________________________________________________________________________________________
+
+D: 22/05/2020
+
+ALB : Application Elastic Load Balancer : http and https protocols.. 
+
+We use Target Groups.. 
+
+Freetier : 750 Hours / Month.. 1 ELB = 1 Month
+
+http: 80
+https: 443
+
+After creating Target group, We cannot modify target type. 
+Target type : 
+--> Instance
+--> IP
+
+--> network ELB, Have a feature, We can associate EIP.
+--> Network ELB, works with "Flow Hash Algorithm"
 
 
-
-
-
-
-
+ASG : Auto Scaling Group : 
 
 
 
