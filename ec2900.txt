@@ -477,8 +477,26 @@ Target type :
 --> network ELB, Have a feature, We can associate EIP.
 --> Network ELB, works with "Flow Hash Algorithm"
 
+_________________________________________________________________________________________
+
+D: 23/05/2020
 
 ASG : Auto Scaling Group : 
+
+
+ScaleIn : Removing
+ScaleOut : Adding resource
+
+
+1. Create an AMI
+2. Launch an ELB (Don't add any resources)
+3. Create an ASG
+	3.1 Create Launch COnfiguration (Template)
+	3.2 Create ASG (When scaleIn & ScaleOut)
+
+
+Task : Create an ASG with Apache/Nginx..!!
+
 
 
 
