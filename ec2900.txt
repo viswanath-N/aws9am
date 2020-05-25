@@ -497,6 +497,135 @@ ScaleOut : Adding resource
 
 Task : Create an ASG with Apache/Nginx..!!
 
+_______________________________________________________________________________________
+
+D: 25/05/2020
+
+
+#!/bin/bash	--> Linux
+
+<script></script>
+<powershell></powershell>
+
+
+Works with only Windows insatnce : 
+<persist>true</persist>
+
+<powershell>
+tzutil /s "India Standard Time"
+</powershell>
+
+<script>
+echo Current time and date >> %SystemRoot%\Temp\reboot.log
+echo %TIME% %DATE% >> %SystemRoot%\Temp\reboot.log
+</script>
+<persist>true</persist>
+
+
+<powershell>
+echo "Current time and date" >> C:\reboot.log
+echo %TIME% %DATE% >> C:\reboot.log
+</powershell>
+<persist>true</persist>
+
+
+curl http://169.254.169.254/latest/user-data
+
+
+Metadata: Data about the data.. 
+
+Windows : http://169.254.169.254/latest/meta-data/
+Linux : curl http://169.254.169.254/latest/meta-data/
+
+ami-id
+ami-launch-index
+ami-manifest-path
+block-device-mapping/
+events/
+hibernation/
+hostname
+identity-credentials/
+instance-action
+instance-id
+instance-type
+local-hostname
+local-ipv4
+mac
+metrics/
+network/
+placement/
+profile
+public-hostname
+public-ipv4
+public-keys/
+reservation-id
+security-groups
+services/
+
+
+AWS CLI:
+_________
+
+https://aws.amazon.com/cli/
+
+IAM User creation : 
+--> AWS management console: Browser
+--> Programatic access : cli : AccesskeyID and SecretAccessKey
+
+Open "cmd"
+aws configure
+enter the AccesskeyID
+enter the SecretAccessKey
+enter the region (none)
+none with default outut : 
+
+aws --> Command to point aws env
+
+aws <service name> : aws s3 : aws ec2 : aws iam : aws kms
+
+s3: 
+aws s3 ls
+aws s3 ls s3://bucketname
+aws s3 cp <source> <destination>
+aws s3 sync <source> <destination>
+aws s3 mb / rb
+aws s3 presign
+
+
+We use Roles over the CLI option.
+
+Task 1 : Launch an ec2 instance using CLI.  .. Terminate using cli.
+
+Task 2 : Create a Sync between your local folder and an s3 bucket. THis sync should execute every 1 hour.
+Task 3 : Generate some Presign URL to expire after 60 sec..
+Task 4 : Create an IAM user using cli and add that user to a group.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
