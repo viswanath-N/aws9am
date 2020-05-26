@@ -595,10 +595,71 @@ aws s3 presign
 We use Roles over the CLI option.
 
 Task 1 : Launch an ec2 instance using CLI.  .. Terminate using cli.
-
 Task 2 : Create a Sync between your local folder and an s3 bucket. THis sync should execute every 1 hour.
 Task 3 : Generate some Presign URL to expire after 60 sec..
 Task 4 : Create an IAM user using cli and add that user to a group.
+
+________________________________________________________________________________________
+
+D: 26/05/2020
+
+Roles : 
+
+--> Roles easy to manage
+--> We always prefer to use roles.
+--> While creating role, whatever the policy we associate, based on that policy, Instance will get access on the aws resources.
+--> We can attach Role/Detach/change role at any time. 
+--> When we are using roles, instance won't store accesskeyID and SecretAccess key.
+
+--> We can use toles to share our aws acc resources to another AWS acc users also.
+
+
+EFS : Elastic File System
+_________________________
+
+--> EFS works with NFS protocol (network File System) v4.1
+--> We can use EFS with only Linux Instances.
+--> No Pre-Provisioning required.
+--> Manages permissions at instane OS level.
+
+
+Windows OS : For windows we have a service FSx. 
+--> FSx works with SMB protocol.
+--> it supports Active Directory authentication also.
+
+
+/var/www/html/
+
+sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-a4f97875.efs.ap-south-1.amazonaws.com:/ /var/www/html/
+
+cat /etc/mtab	
+
+fs-a4f97875.efs.ap-south-1.amazonaws.com:/ /var/www/html nfs4 rw,relatime,vers=4.1,rsize=1048576,wsize=1048576,namlen=255,hard,noresvport,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=172.31.12.15,local_lock=none,addr=172.31.5.39 0 0
+
+vim /etc/fstab
+
+
+
+Task : Create an Index.html and upload it to an s3 bucket... While launching an ec2 instance, use userdata and get the index.html file from s3 bucket to web server public doc path.
+
+Task 2: Create a role (s3 readonly) and associate a role with an ec2 instance and test the s3 access from ec2 instance.
+
+Task 3 : Provide S3Fullaccess for task2 created role using Inline policy.
+
+Task 4 : Create Multiple Linux instance, Create an EFS and mount efs to both the instances webserver path and deliver same data from both the instances.
+--> Design SG as we discussed.
+
+Task 5 : Launch a new Linux insatnce, while launching Associate the EFS we created. 
+
+
+
+
+
+
+
+
+
+
 
 
 
