@@ -652,6 +652,79 @@ Task 4 : Create Multiple Linux instance, Create an EFS and mount efs to both the
 Task 5 : Launch a new Linux insatnce, while launching Associate the EFS we created. 
 
 
+_______________________________________________________________________________________
+
+D: 27/05/2020
+
+Lightsail : 
+
+Elastic Beanstalk : PaaS : We have preConfigured platforms.. Based on our req, we can create and manage platforms with simple clicks.. All we need to do is Upload the code.. 
+
+--> One org, their main focus is on Application development, not on Infra provisioning and  management.. Based on load Infra should scale automatically.. What is the best application.. 
+
+
+AWS Systems Manager : "SSM role"
+
+300 Instance --> We need to have a "role"
+Using "TAGS" we can filter the instances.. 
+
+Application : SAP/bigData/Php/java
+Platform : Linux / Windows
+Cost Centre : ASDFGA
+
+Resource Group : --> FIlter all Linux ==> LinuxRG
+		 --> FIlter all Win ==> WindowsRG
+
+100 linux instance : --> One critical security patch 
+200 Windows instances : 
+
+If we lost keypair of a windows instance..?
+
+
+Linux
+Windows
+
+#!/bin/bash
+yum udpate -y
+yum insatll httpd -y
+service httpd start
+
+
+Task : Install Putty application in 2 windows instances using "System manager"..
+
+Task 2 : Make an ec2 instance a webserver using run command option. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
