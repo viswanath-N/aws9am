@@ -1,0 +1,43 @@
+Route53: AWS DNS Service..
+
+DNS : DOmain Naming System/Service.. 
+
+FQDN/DN == Public IP Address
+
+
+DOmain Registrers : GOdaddy, Bigdata, aws r53, gDNS...  
+avinash.website --> Can i purchase it..?
+
+ICANN : TO verify domain status.. Available / taken..
+
+IANA : Root zone db.. 
+
+Current domain owner information..??  Whoisdb
+
+We need to have a domain name..!!!!!
+
+--> freenom.com
+
+--> Godaddy to purchase a domain at low cost.. 200-250 INR..
+HostedZone : 0.50$/Month.. 
+
+avinash.website
+
+Step 1 : Purchase a Domain Name. (GoDaddy)
+
+Step 2 : Create a HostedZone in Route53. (SOA, NS Record)
+COpy 4 NS Records from AWS R53.. and add these NS in Godaddy..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
