@@ -108,6 +108,7 @@ ec2 instance isolation diagram:
 
 
 Shared Hardware Tenancy : Underlying h/w shares with multiple AWS customers.
+
 Dedicated Tenancy : Dedicated hardware for your AWS account. Underlying h/w will share with any other customers.
 
 --> Dedicated Instance : H/w for one instance.. 
@@ -126,6 +127,7 @@ Instance Store Volumes :
 --> We cannot stop/start the instance. 
 --> If underlying hardware failure happens, we will loss all the data. 
 --> We can reboot, if required.
+--> Provides very high throughput.
 
 EBS : 
 --> Dedicated storage service for ec2 instances.
@@ -253,6 +255,7 @@ Ticket :  We need 10 ec2 instance, Install IIS, Set custom WP, Install Putty, Cu
 
 Recommeded: Stop the ec2 instance...
 
+CIS Benchmarks : Centre for Interent security : 
 
 CustomAMI / Golden AMI : 
 --> If you need instances with specific standards / custom settings, we use goldenAMI.
@@ -630,7 +633,7 @@ Windows OS : For windows we have a service FSx.
 
 /var/www/html/
 
-sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-a4f97875.efs.ap-south-1.amazonaws.com:/ /var/www/html/
+sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-a4f97.efs.ap-south-1.amazonaws.com:/ /var/www/html/
 
 cat /etc/mtab	
 
@@ -693,6 +696,32 @@ service httpd start
 Task : Install Putty application in 2 windows instances using "System manager"..
 
 Task 2 : Make an ec2 instance a webserver using run command option. 
+
+____________________________________________________________________________________
+
+D: 28/05/2020
+
+Placement Group : 
+--> If our ec2 instances required Low network latency and High Network throughput.
+--> Can't span across AZs.. 
+--> ap-south-1a --> All resources from 1a only..
+
+Cluster – packs instances close together inside an Availability Zone. This strategy enables workloads to achieve the low-latency network performance necessary for tightly-coupled node-to-node communication that is typical of HPC applications.
+
+Partition – spreads your instances across logical partitions such that groups of instances in one partition do not share the underlying hardware with groups of instances in different partitions. This strategy is typically used by large distributed and replicated workloads, such as Hadoop, Cassandra, and Kafka.
+
+Spread – strictly places a small group of instances across distinct underlying hardware to reduce correlated failures. Can span across Region. 
+
+
+https://www.youtube.com/watch?v=Fe2mEkWiNSA&t=12s
+
+https://www.youtube.com/watch?v=s15ljWSTWY4&t=76s
+
+
+
+
+
+
 
 
 
