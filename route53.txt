@@ -28,12 +28,57 @@ Step 1 : Purchase a Domain Name. (GoDaddy)
 Step 2 : Create a HostedZone in Route53. (SOA, NS Record)
 COpy 4 NS Records from AWS R53.. and add these NS in Godaddy..
 
+______________________________________________________________________________________
+
+D: 29/05/2020
+
+Hostez Zone = Domain name
+We will get NS & SOA record automatically..
+
+A : Address Record : IP <--> Name
+In AWS Along with A record, We always use "Alias" record.
+Alias : record : S3 / ELB / Cloufront / Benastalk.. (A + Alias)
+
+NS : Name Server Records :
+SOA : Start of Authority : It contains zone admin inf.
+
+CNAME : Cananical Name : Domain redirections : fb.co, --> m.fb.com
+MX : Mail Exchange Record
+TXT : Text record
+PTR : Pointer
+
+Route53 Routing Polocies: 
+__________________________
+1. Simple RP
+	When we have one resource, we can use simple RP
+2. Weighted RP
+3. Latency RP
+4. Failover RP
+5. Geo Location RP
+6. Multivalue Answer RP
+
+#!/bin/bash
+yum install httpd -y
+service httpd start
+chkconfig httpd on
+echo "<h1>This is a USA Webserver</h1>" > /var/www/html/index.html
+
+
+DNS changes takes effect in 300 Seconds
+
+1. ipconfig /flushdns
+2. Change the DNS servers.. 
 
 
 
+--> What is Public IP.?
+--> What is Private IP.?
 
+--> What is IPv4 & IPv6.?
 
+--> Public Subnet and Private Subnet.
 
+--> What is Subnet / subnet mask..!!!
 
 
 
