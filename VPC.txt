@@ -82,7 +82,7 @@ Last : broadcost ID..
 
 AWS Supports max /16 Subnet, Minimum : /28 subnet.. 
 
-___________________________________________________________________________________________________
+_________________________________________________________________________________________
 
 
 All subnets in default VPC are Public Subnets.
@@ -90,6 +90,52 @@ All subnets in default VPC are Public Subnets.
 We always use customVPC. 
 --> We can create Public Subnet and private Subnets.
 --> We can choose our required IP range.
+
+
+________________________________________________________________________________
+
+D: 01/06/2020
+
+Step 1 : Create a VPC (CIDR : 192.168.0.0/16) --> Usable IPs 65,531
+
+Step 2 : Create Subnets under CustomVPC.
+
+	Public Subnet : ap-south-1a : 192.168.100.0/24
+	Private Subnet : ap-south-1b : 192.168.200.0/24
+
+Step 3 : Create a InternetGateway (IGW) and associate with CustomVPC.
+* One VPC can contain only one IGW.
+
+Step 4 : Create a RouteTable for PublicSubnets and another RT for Private Subnets.
+
+	PublicRoute : Goto "Subnet Association" add "public SUbnet"
+			--> Navigate to Routes: add a route : 0.0.0.0/0 --> IGW
+
+	Private Route : Goto "Subnet Association" add "private SUbnet"
+* In future, if you are creating any new subnet, If you want to make it as a "Public", associate to "PublicRoute".. If you want to make it "Private" associate to "Private Route".
+
+Step 5 : (optional) : If we want to get a public IP address for public subnet instances automatically, we can enable an option.
+
+Choose "Public Subnet" --> Actions --> "Modify Public IP setting" --> enable and save.
+
+
+Jump Server / bastian host : A dedicated instance runs in "public subnet", used to get connected to "Private Subnet" instances.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
